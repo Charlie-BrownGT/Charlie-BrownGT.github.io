@@ -10,6 +10,7 @@ body, h1, h2, h3, p, ul, li {
     background-color: lightgreen;
     text-align: center;
     padding: 2px;
+    font-family: Calibri;
     font-size: 25px;
     color: rgb(0, 0, 0);
   }
@@ -19,10 +20,12 @@ body, h1, h2, h3, p, ul, li {
     width: 20vw;
     height: 100%;
     padding: 20px;
+    font-family: Calibri;
   }
   nav ul {
     list-style-type: none;
     padding: 20px;
+    font-family: Calibri;
   }
   article {
     float: left;
@@ -30,16 +33,19 @@ body, h1, h2, h3, p, ul, li {
     width: 70vw;
     background-color: lightgreen;
     height: 100%; 
+    font-family: Calibri;
   }
   footer {
     background-color: lightgreen;
     padding: 10px;
     text-align: center;
     color: rgb(0, 0, 0);
+    font-family: Calibri;
   }
   section::after {
     content: "";
     display: table;
     clear: both;
+    font-family: Calibri;
   }
 
