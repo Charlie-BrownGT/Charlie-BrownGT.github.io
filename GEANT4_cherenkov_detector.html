@@ -30,20 +30,18 @@
         </header>
         <br>
         <p>
-        This page intends to detail the process of constructing a Cherenkov Detector and Particle Gun in Geant4, which will produce output files which can be analysed using the ROOT framework. 
+        This page intends to detail the process of constructing a Cherenkov Detector and Particle Gun in Geant4, which will produce output files which can be analysed using the ROOT framework. Before begining this section, ensure you've completed the steps outline in either the GEANT4 Installation page, or GEANT4 Multithreaded Installation page. From there, ensure you've referenced the appropriate version of your installation using the command at the bottom of the respective installation pages. The source code used throughout this project can be found on GitHub at <a href="https://github.com/Charlie-BrownGT/geant4-cherenkov-detector.git">Cherenkov Detector</a>.
         </p>
         <br>
         <p>
-        
+        To begin making a project, create a new directory from your landing directory named an appropriate title. Here, I've called mine geant4-cherenkov-detector. There are a number of different methods you can use to make your projects in GEANT4, here I'll use CMAKE. With this in mind, navigate into your project directory and create a file named 'CMakeLists.txt'. Within this file you'll need to specify the minimum cmake version required to comile your code, here I've specified version 2.6. Next you'll need to name the project, I've called mine 'cherenkov_detector'. Next you need to tell cmake to find GEANT4, this will use the package that you've referenced prevously (geant4make.sh) when compiling your project, and state that this is required. Within this command you also need to specify that you'll need user interface and visualisation options. You also need to add the 'include' files that come with GEANT4. Then you need to compile all the source and header files that you have in your project folder. You need to define the name of the executable for your project, this will provide the name of the programme which you will run when you run your programme, here mine is named sim. You will also likely need to reference other libraries present in GEANT4 during your project, this is enabled with the 'target_link_libraries' command. Then lastly, you'll also need to add the target for your simulation. 
         </p>
         <br>
+        <p>
+        Next create a new file named something like 'sim.cc', which will provide the main body for your simulation. Pay particular attention here to the functionality that you include within your headers. Once the base setup, the next, and likely most important step, is to create the G4RunManager, this is effectively the heart of your Geant4 instance. To achieve this, you'll need to initialize several managers, principally G4UIManager, G4VisManager and G4UIExecutive. Once created you will also need to initialize your visManager and start your UI session. With the elements of your sim.cc file complete you can create a new directory in your project file, I've named mine 'build'. Moving into your new directory you can add and compile your work so far using the 'cmake ..' and 'make' command. Once these are complete you can run your project using the './sim' command from the terminal. This should launch a blank GEANT4 terminal without any content. This will come in the following steps. 
+        </p>
         	<ul>
-        		<li>Change the installation prefix to '/home/NAME/software/geant4/geant4.x.x.x.x-MT-install', this will create a new folder called install to store the installation.</li>
-        		<li>Specify 'On' for the enable multithreaded option</li> 
-        		<li>Specify 'On' for GEANT4_INSTALL_DATA</li>
-        		<li>Specify 'On' for GEANT4_USE_QT</li> 
-        		<li>Specify 'On' for GEANT4_RAYTRACER_X11</li> 
-        		<li>Specify 'On' for GEANT4_USE_SYSTEM_EXPAT</li>
+        		<li></li>
         	</ul>
         <br>
         <p>
