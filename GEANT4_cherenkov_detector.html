@@ -59,4 +59,17 @@
         <p>
         With these steps in place we can tell GEANT4 to use the geometry that we've just created. This is done in the sim.cc file via the run manager. A point here, be sure to include all the relevant header files to allow your programme to call the respective parts of GEANT4. 
         </p>
+        <br>
+        <h2>Implementing a Physics List</h2>
+        <p>
+        The Physics List is used to determine how a particle interacts with the detector construction. This is required before any simulations can run. The Physics List is implemented by creating a new class, in this case called 'MyPhysicsList', this inherits from the class 'G4VModularPhysicsList'. With this in mind, we begin by creating two new files 'physics.cc' and 'physics.hh'. Both files here include the standard definitions including constructor, destructor, public inheritence, then the body of the definition sits in the 'MyPhysicsList.cc' file. 
+        </p>
+        <br>
+        <p>
+        Within the 'physics.cc' file, you begin by implementing the required physics for the simulation that you're running. In this case, noting that we're making a Cherenkov Detector, we need the standard EM physics and optical physics list, although there are others that are pre-defined within the GEANT4 package. The different types of physics will also need to be included within the header file. With these steps complete, you need to define your Physics List within the main 'sim.cc' file to ensure it's included within the simulation. You also need to initialize the Physics List, in the same manner that the construction was initialized. 
+        </p>
+        <br>
+        <p>
+        With these steps complete, the final step required to produce a visual output is to direct GEANT4 to display. This is achieved by using the previously defined UI manager and applying the command "/vis/open OGL" within the 'sim.cc' folder and telling GEANT4 to draw the volume using the "/vis/drawVolume" command. When re-compiled and executed, this should produce a visual representation of your detector box. You can also use the "/vis/viewer/set/viewpointVector 1 1 1" command (via UIManager) to set the default view point that the simulation will launch from. 
+        </p>
 </html>
