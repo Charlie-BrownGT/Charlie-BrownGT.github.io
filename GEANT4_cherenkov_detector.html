@@ -30,6 +30,7 @@
         </header>
         <br>
         <h2>Initial Setup</h2>
+        <br>
         <p>
         This page intends to detail the process of constructing a Cherenkov Detector and Particle Gun in Geant4, which will produce output files which can be analysed using the ROOT framework. Before begining this section, ensure you've completed the steps outlined in either the GEANT4 Installation page, or GEANT4 Multithreaded Installation page. From there, ensure you've referenced the appropriate version of your installation using the command at the bottom of the respective installation pages. The source code used throughout this project can be found on GitHub at <a href="https://github.com/Charlie-BrownGT/geant4-cherenkov-detector.git">Cherenkov Detector</a>.
         </p>
@@ -61,6 +62,7 @@
         </p>
         <br>
         <h2>Implementing a Physics List</h2>
+        <br>
         <p>
         The Physics List is used to determine how a particle interacts with the detector construction. This is required before any simulations can run. The Physics List is implemented by creating a new class, in this case called 'MyPhysicsList', this inherits from the class 'G4VModularPhysicsList'. With this in mind, we begin by creating two new files 'physics.cc' and 'physics.hh'. Both files here include the standard definitions including constructor, destructor, public inheritence, then the body of the definition sits in the 'MyPhysicsList.cc' file. 
         </p>
@@ -70,6 +72,6 @@
         </p>
         <br>
         <p>
-        With these steps complete, the final step required to produce a visual output is to direct GEANT4 to display. This is achieved by using the previously defined UI manager and applying the command "/vis/open OGL" within the 'sim.cc' folder and telling GEANT4 to draw the volume using the "/vis/drawVolume" command. When re-compiled and executed, this should produce a visual representation of your detector box. You can also use the "/vis/viewer/set/viewpointVector 1 1 1" command (via UIManager) to set the default view point that the simulation will launch from. 
+        With these steps complete, the final step required to produce a visual output is to direct GEANT4 to display. This is achieved by using the previously defined UIManager and applying the command "/vis/open OGL" within the 'sim.cc' folder and telling GEANT4 to draw the volume using the "/vis/drawVolume" command. When re-compiled and executed, this should produce a visual representation of your detector box. You can also use the "/vis/viewer/set/viewpointVector 1 1 1" command (via UIManager) to set the default view point that the simulation will launch from. 
         </p>
 </html>
