@@ -74,4 +74,38 @@
         <p>
         With these steps complete, the final step required to produce a visual output is to direct GEANT4 to display. This is achieved by using the previously defined UIManager and applying the command "/vis/open OGL" within the 'sim.cc' folder and telling GEANT4 to draw the volume using the "/vis/drawVolume" command. When re-compiled and executed, this should produce a visual representation of your detector box. You can also use the "/vis/viewer/set/viewpointVector 1 1 1" command (via UIManager) to set the default view point that the simulation will launch from. 
         </p>
+        <br>
+        <h2>Creating a Particle Gun</h2>
+        <br>
+        <p>
+        There are two more classes required to implement a particle gun within a GEANT4 simulation, these are the action initialization which deals with the computation and the actual particle gun action which generates the particles that you wish to use. To begin, we create two fileds named 'action.cc' and 'action.hh' within the project folder. 
+        </p>
+        <br>
+        <p>
+        Begining with 'action.hh', this is defined in a similar manner to the other header files, then includes a reference to the public GEANT4 class 'G4VUserActionInitialization.hh'. Moving to define the class and state the public inheritance, then ensure you've defined the constructor and destructor in the usual manner. With these steps complete you can move to define the actual function that you're using. This remains a virtual function and is pulled from the G4VUserActionInitialization class, and is called build. This build function is used to run the particle gun and computes the required stepping. 
+        </p>
+        <br>
+        <p>
+        Moving to the 'action.cc' file, begin by including the 'action.hh' header and defining the constructor and destructor. From there you can build out the virtual function defined within the header file. You can test the work upto this point by including the details within the 'sim.cc' file, here you will need to add the header file and create another 'runManager->SetUserInitialization' command, here specifying 'MyActionInitialization'. This test can be completed using the cmake and make commands previously mentioned. 
+        </p>
+        <br>
+        <p>
+        With this test complete, you can return to creating the particle gun. This requires creation of two additional files, 'generator.cc' and 'generator.hh'. The header file is defined in a very similar manner to 'action.hh' but inherits from a different public class, 'G4VUserPrimaryGeneratorAction', then includes the name 'MyPrimaryGenerator' within the class name, constructor and destructor. Then the virtual function is named 'GeneratePrimaries'. One difference, when defining the class, an argument needs to be passed to the class named 'G4Event*', then you need to define the actual particle gun. This is built as a private function and is called 'G4ParticleGun', then the gun itself is called '*fParticleGun'. At this point, be sure to include the appropriate headers files. With these steps complete we can turn to our 'generator.cc' file. 
+        </p>
+        <br>
+        <p>
+        Within the constructor of the 'action.cc' file you begin by defining the particle gun. Within the definition, the new fParticleGun will require and argument, this is defning the number of particles per event. It should be noted, within GEANT4 it's usual to have one run, then each run can contain several events, each event can contain several particles. For simplicity, here each event will have one particle per event, events can be combined in the future if more particles or different runs are required. Point to note, it is also good practice to delete the fParticleGun within the destructor. Next we turn to the function MyPrimaryGenerator::GeneratePrimaries. This function takes the class 'G4Event' and serves as an input parameter for the function. 
+        </p>
+        <br>
+        <p>
+        Within the function we need to define the type of particles we wish to use. We start this process using the 'G4ParticleTable' class. The G4ParticleTable defines all the information on the particle types, much in the same way that the Nist function included the detail on the materials. Here we want to use this function to find a proton. We achieve this by defining the name of the particle "proton", then looking for it within the particle table. Here we've then copied all the relevant information on the particle and stored it in the variable '*particle'. Next we need to define the particle's starting position and momentum. Each of these are created using the G4ThreeVector class previously mentioned. In this example, the particle is created at the origin and has one unit of momentum on the z-direction. Using these definitions we can use the fParticleGun, created earlier, to define the gun's actual properties.These are passed to the particle gun as variables with arguments. Lastly we need to tell GEANT4 to generate primary vertex then feed the argument 'anEvent'.
+        </p>
+        <br>
+        <p>
+        From there, we return to our action header and include the generator header file. Once complete, moving back to our 'action.cc' file include the detail on 'MyPrimaryGenerator', here we are defining the new generator and setting the user action. At this point you can test the simlulation again. When you run the programme you will ee an output to the terminal but no visualization on screen. This is because we need to tell GEANT4 to draw the result.
+        </p>
+        <br>
+        <p>
+        To ask GEANT4 to draw particle paths, we go back to our sim.cc file and use the UIManager to apply command '/vis/scene/add/trajectories smooth'. Here we've also added some other commands to update each time an event is created. When re-compiled, this should allow for a visual output (blue line representing a proton) within the detector construction. Any red lines observed represent electron that are produced from the proton interaction with the air molecules.
+        </p>
 </html>
