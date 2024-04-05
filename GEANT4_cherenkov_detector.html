@@ -109,7 +109,7 @@
         To ask GEANT4 to draw particle paths, we go back to our sim.cc file and use the UIManager to apply command '/vis/scene/add/trajectories smooth'. Here we've also added some other commands to update each time an event is created. When re-compiled, this should allow for a visual output (blue line representing a proton) within the detector construction. Any red lines observed represent electron that are produced from the proton interaction with the air molecules.
         </p>
         <br>
-        <h2>Adding DetectorVolume</h2>
+        <h2>Adding Detector Volume</h2>
         <br>
         <p>
         Here we will concentrate on building a ridge detector for our existing setup. This contains a thin radiator made of an aerogel, then a series of photosensors that will log hits, which can be used for subsequent analysis. To begin, we return to our detector construction file - 'construction.cc'. The first thing to do within this file is to define our material that we wish to use for the aerogel. 
