@@ -108,4 +108,30 @@
         <p>
         To ask GEANT4 to draw particle paths, we go back to our sim.cc file and use the UIManager to apply command '/vis/scene/add/trajectories smooth'. Here we've also added some other commands to update each time an event is created. When re-compiled, this should allow for a visual output (blue line representing a proton) within the detector construction. Any red lines observed represent electron that are produced from the proton interaction with the air molecules.
         </p>
+        <br>
+        <h2>Adding DetectorVolume</h2>
+        <br>
+        <p>
+        Here we will concentrate on building a ridge detector for our existing setup. This contains a thin radiator made of an aerogel, then a series of photosensors that will log hits, which can be used for subsequent analysis. To begin, we return to our detector construction file - 'construction.cc'. The first thing to do within this file is to define our material that we wish to use for the aerogel. 
+        </p>
+        <br>
+        <p>
+        This aerogel will consist of silicon dioxide, water and carbon. This component is defined using the 'G4Material' function. The arguments taken in this material definition are the name, density and number of components. From there we move to define the actual material used. This is done using the previously defined nist function, then looks for the element, and defines the number of times it should be included in our material, in this case once for silicon, as there's only one silicon atom in SiO2. We then repeat this process for the O2 molicule. We then return to our build folder and recompile our code to ensure it works. We then run through a similar process for defining water, H2O. Our last element that's missing in the element definition for carbon. This is done using the G4Element function.
+        </p>
+        <br>
+        <p>
+        With these definitions confirmed we can build our aerogel material. This begins by defining the material name - aerogel, then adding the materials/elements that are used. Note, this step also includes the percentage part that each of each material within our overall aerogel material. Once these materials are included, it is worth recompiling the code to ensure there's no errors. With these steps complete we move to make the physical radiator itself, so we can see it in the physical world that we've created. 
+        </p>
+        <br>
+        <p>
+        We begin this process using a box again, note the dimensions of the box created need to be smaller then the overall volume size. The dimension in z should be significantly smaller as we want to create a notable ring once the detector is fully working. A point to note, this new volume is defined in the same manner previously mentioned - using a solid volume, logical volume then physical volume. Also, the physical radiator is a daughter volume of the overall mother volume, as such, within the arguments for the physRadiator 'logicWorld' should be included. Once complete, the simulation should run again with the aerogel surface present.
+        </p>
+        <br>
+        <p>
+        When the simulation runs, there's no cherenkov effect initiated as we need to include some extra physical details within our constructor. The particles that we generate need to travel faster then the speed of light within the aerogel surface (which they do for 100GeV protons), but we need to add the refractive index for the aerogel. This requires the cherenkov angle. We will action this by including some arrays titled 'energy'. To produce these values we need to calculate the momentum of the photons (which is not trivial), but we will include a conversion from the photon wavelength, into energy (in eV), then converts to the final value - energy. Once these values are defined we can move to the refractive index of the aerogel. In this example we've stated that the index remains the same for different light wavelengths (discounting dispersion), but for the sake of this example we shall proceed.
+        </p>
+        <br>
+        <p>
+        To add this refractive index to our material we need to create a new G4PropertiesTable called *mptAerogel. The arguments passed to this materials property table are RINDEX - denoting that it's a refractive index, energy, refractive index and the number of values. With this properties table defined we can add this to our aerogel using the 'SetMaterialPropertiesTable' command. To see photons propagating through the remainder of the detector volume, we also need to define the refractive index of the world volume (G4_AIR), we approach this problem with a similar method. With these elements complete you can accumulate multiple particles from several runs visually by adding the UImanager command '/vis/scene/endOfEventAction accumulate'. With these steps complete, you should be able to run a simulation that produces cherenkov light when the incident proton passes through the radiator volume.
+        </p>
 </html>
