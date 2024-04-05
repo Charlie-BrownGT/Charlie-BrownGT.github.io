@@ -134,4 +134,34 @@
         <p>
         To add this refractive index to our material we need to create a new G4PropertiesTable called *mptAerogel. The arguments passed to this materials property table are RINDEX - denoting that it's a refractive index, energy, refractive index and the number of values. With this properties table defined we can add this to our aerogel using the 'SetMaterialPropertiesTable' command. To see photons propagating through the remainder of the detector volume, we also need to define the refractive index of the world volume (G4_AIR), we approach this problem with a similar method. With these elements complete you can accumulate multiple particles from several runs visually by adding the UImanager command '/vis/scene/endOfEventAction accumulate'. With these steps complete, you should be able to run a simulation that produces cherenkov light when the incident proton passes through the radiator volume.
         </p>
+        <br>
+        <h2>Adding a Photosensors</h2>
+        <br>
+        <p>
+        To being creating a detector we need to create the detector volumes, this will begin in the 'construction.cc' and 'construction.hh' files. Here we aim to create an array of 100*100 sensors, which will be able to detect the location of incident radiation. First we define what each sensor looks like using the G4Box class, each will be called solidDetector. Note, the arguments passed to this definition represent the half width of each detector, in this case 0.005m (5mm), the full width will be 1cm per detector and will fill the entire mother volume. Next we need to define our logical volume, however the sensitive detector that we will define late will need to refer to this. As a result, we need to access our logical detector outside of our construction volume. To work around this problem, we define our logical volume in the overall class definition (within the header file). Once complete, we can define logicDetector within the consturction in the normal manner.
+        </p>
+        <br>
+        <p>
+        To create the physical instances of our detectors we use two for loops to lay out each sensor. Aside from the loops, this definition process remains similar to those covered previously. The contents of the loops included in this example is derived geometrically, ensuring all elements of the detector volumes fall within the mother volume. Lastly, it's worth noting that we need to define the index of each detector within this definition, this needs to remain a function of the indicies that are being used in the overall definition, this ensures we have a seperate definition for each detector cell. With these steps complete, we can re-compile and test the code to ensure the simulation works. As an interest piece, the terminal readout whilst running the simulation comes from the function definition to check for overlaps, if you wish to turn this off it can be change within the physDetector arguments.
+        </p>
+        <br>
+        <p>
+        At this point, the simulation can run and produce cherenkov light, but the positions of the light detected has not been stored. To store these values we need to create a new class called 'detector.hh' and 'detector.cc'. Each of these begin with the usual definition steps. The detector class is named MySensitiveDetector and is derived from the public GEANT4 class G4VSensitiveDetector. One point to note, the constructor and destructor definitions include the argument G4String, the reasoning for this will be explained in the following steps. Once the header is setup we need to add one function to the header called ProcessHits (this is used to complete the detection). The arguments passed to this function are named G4Step and G4TouchableHistory. 
+        </p>
+        <br>
+        <p>
+        Moving to 'detector.cc', this also begins with the usual setup including both constructor and destructor. Then we move to define out ProcessHits function. Our arguments here are named aStep and ROhist. Note, within the arguments for the constructor you also need to reference the class from which we're inhereting and provide the name of our detector. Moving back to our construction we define another function in the header file, this is called ConstructSDandField. Lastly, ensure you include the detector header file within the construction header file. 
+        </p>
+        <br>
+        <p>
+        Moving back to the actual detector construction we can begin to define the it's output. After defining our detector and calling it sensDet we can tell our logicDetector that this is the actual detector. With these steps complete, the simulationcan be tested again but this still shouldn't give any detail on the results as we've not asked the detector to produce anything. This is what we will do next.
+        </p>
+        <br>
+        <p>
+        Moving back to 'detector.cc', first we need to access the track of the particle, we do this by pulling from the G4Track class and defining our variable 'track', this uses the aStep argument from earlier. We can also access the particle start and end points using the G4StepPoints class and defining each into a seperate variable, here called preStepPoint and postStepPoint. These denote the positiion when the particle enters and leaves the detector respectively. We can also get direct access to the position of the photon by defining the G4ThreeVector posPhoton and using the same preStepPoint function to find it. With these steps complete, you can output the position using the command G4cout, this will print all of the photon positions to the terminal. 
+        </p>
+        <br>
+        <p>
+        To avoid detection of photons that enter different detector volumes from the side, you can add the SetTrackStatus command to the detector construction. This will ensure that each photon will only be detected by a single detector volume - it will not propagate any further. This will also ensure the photons are detected on the immediate incident surface. In reality we do not have access to the position of the photon exactly, we would need to reconstruct the path from the cherenkov angle. As such, we can get access to our detector position by using the G4VTouchable argument defined earlier. The copyNo variable is used here to identify the individual detector where the photons are incident. The example here provides an option to output this copy number to the terminal. Alternatively if you want to know the position of your detector you can use the variable defined in this example as physVol. These three options give several methods to achieve similar information, the first one remains unphysical, however the second two are practically applicable. 
+        </p>
 </html>
