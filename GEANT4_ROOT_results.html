@@ -7,7 +7,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>GEANT4 Output Stored in ROOT</title>
     </head>
-
 <nav>
     <h1>Navigation</h1>
     <ul>
@@ -25,7 +24,6 @@
     <li><a display:inline href="./archive">Archive</a></li>
     </ul>
 </nav>
-
     <article>
         <header>
             <h1>Storing the Results from GEANT4 in ROOT</h1>  
@@ -55,5 +53,4 @@
         <br>
         <p>
         Start by ensuring you include the run.hh file within the action.hh file. Then, moving to the action.cc file, below the generator, we can define the MyRunAction within the simulation. Once defined, be sure to issue the SetUserRunAction command in the same manner as before to make sure the runAction is called. At this point, you can test your new files using the cmake .. and make commands and complete any debugging. Next we return to our detector files to insturct the ouput to be sent to our root file. Here we include the relevant headers in our file, in this case the G4AnalysisManager, then add the detail to the detector.cc file. The FillNtupleIColumn command is used here to actually pass data to our file. It's worth noting here, the first arguments here (0 - 3) represent the numbered rows of the Ntuples that your defining, if you add or remove a row later within the run.cc file, these will need to be re-indexed. The last row here ensures we finish the file correctly. To find the evt variable we use the G4RunManager to find the current event and store it in an appropriate variable. Be sure to include the G4RunManager header within your header file. With all of these steps complete, you should be able to re-compile and run your simulation and produce an output file in a root format. Please refer to the ROOT section for more detail on how to install and use ROOT. As a final point, you can use ROOT to plot the x and y hits against eachother using the command 'Hits->Draw("fX:fY", "", "colz)' from the root terminal. 
-        
 </html>
