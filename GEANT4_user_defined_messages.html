@@ -40,7 +40,15 @@
         </p>
         <br>
         <p>
-        With this step complete we can use the DeclareProperty command to define the actual changes that the message will execute. The arguments passed will be the pieces that are changed later on. In this case we're using the message to change the number of columns and number of rows within the particle detector. Note, the variables nCols and nRows will serve as the variables that we change, these will need to be defined within the private part of the header file. 
+        With this step complete we can use the DeclareProperty command to define the actual changes that the message will execute. The arguments passed will be the pieces that are changed later on. In this case we're using the message to change the number of columns and number of rows within the particle detector. Note, the variables nCols and nRows will serve as the variables that we change, these will need to be defined within the private part of the header file. With these steps complete, your simulation can be re-compiled and tested. 
+        </p>
+        <br>
+        <p>
+        The next step required is to change the loops that are used to define the detector positions in order to build based on rows and columns specified. The placement of the detectors also needs to be adjusted within the loop contents. Next, the actual size of the detectors should also change, this is so the detector surface fills the entire volume. This begins by defining the world volume dimensions within the xWorld, yWorld and zWorld variables. Once these variables are implemented into the solidWorld definition we move to the solidDetector definition. This parameterization needs to depend explicitly on the number of rows and columns. Another point here, whenever you instruct GEANT4 to change the detector construction, you need to instruct it to run the construct function again. This can cause memory problems as you create new variables with the same names that were used previously during the first build. To solve this problem we can put our definitions for volumes and place them into the definition of the class (header file).
+        </p>
+        <br>
+        <p>
+        We also wish to ensure the materials used within our simulation are only defined once (rathern then each time we change the geometry of our detector). As such, we make a new class within our construction source 
         
         
 </html>
