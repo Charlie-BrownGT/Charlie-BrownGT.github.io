@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="web_style_1.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GEANT4 User Defined Messages</title>
+    </head>
+<nav>
+    <h1>Navigation</h1>
+    <ul>
+    <li><a display:inline href="./index">Home</a></li>
+    <li><a display:inline href="./about">About</a></li>
+    <li><a display:inline href="./physics_projects">Physics Projects</a></li>
+    <li><a display:inline href="./computer_projects">Computer Projects</a></li>
+    <li><a display:inline href="./GEANT4_installation">GEANT4 Installation</a></li>
+    <li><a display:inline href="./GEANT4_macro_files">GEANT4 Macro Files</a></li>
+    <li><a display:inline href="./GEANT4_MT_installation">GEANT4 Multithreaded Installation</a></li>
+    <li><a display:inline href="./GEANT4_MT_application">GEANT4 Multithreaded Application</a></li>
+    <li><a display:inline href="./GEANT4_user_defined_messages">GEANT4 User Defined Messages</a></li>
+    <li><a display:inline href="./GEANT4_cherenkov_detector">GEANT4 Cherenkov Detector</a></li>
+    <li><a display:inline href="./GEANT4_ROOT_results">GEANT4 Output Stored in a ROOT File</a></li>
+    <li><a display:inline href="./ROOT">ROOT</a></li>
+    <li><a display:inline href="./contact">Contact</a></li>
+    <li><a display:inline href="./archive">Archive</a></li>
+    </ul>
+</nav>
+    <article>
+        <header>
+            <h1>GEANT4 MT User Defined Messages</h1>  
+        </header>
+        <br>
+        <p>
+        User defined messages within GEANT4 can be used for many things, ranging from changing detector geometries during a simulation to adjusting input parameters from the particle generators. This section aims to detail how to create these within a simulation and cater for a broad array of effects. The detail covered here will use the code generated throughout the GEANT4 Cherenkov Detector, macro files and multithreading sections. As such, in order to complete this section it would be useful to have a working version of this simulation locally.
+        </p>
+        <br>
+        <p>
+        We begin by returning to our construction.cc and construction.hh files. Within the header we declare usage of the G4GenericMessengar header. Then we can create an object within our private section of the header file. This can remain private as we do not need to use it outside of our function. In this case we call it fMessenger. Moving to the constructor of the source file we define the new G4GenericMessenger and pass the relevant arguments. Note, within these arguments the first /detector/ argument defines the folder in which the new commands will be stored, this sits under the initial root directory. Then, the Detector Construction argument provides a prompt for the user during the simulation's execution.
+        </p>
+        <br>
+        <p>
+        With this step complete we can use the DeclareProperty command to define the actual changes that the message will execute. The arguments passed will be the pieces that are changed later on. In this case we're using the message to change the number of columns and number of rows within the particle detector. Note, the variables nCols and nRows will serve as the variables that we change, these will need to be defined within the private part of the header file. 
+        
+        
+</html>
