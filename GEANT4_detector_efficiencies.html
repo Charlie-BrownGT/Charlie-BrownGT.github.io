@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="web_style_1.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GEANT4 Detector Efficiencies</title>
+    </head>
+<nav>
+    <h1>Navigation</h1>
+    <ul>
+    <li><a display:inline href="./index">Home</a></li>
+    <li><a display:inline href="./about">About</a></li>
+    <li><a display:inline href="./physics_projects">Physics Projects</a></li>
+    <li><a display:inline href="./computer_projects">Computer Projects</a></li>
+    <li><a display:inline href="./GEANT4_installation">GEANT4 Installation</a></li>
+    <li><a display:inline href="./GEANT4_macro_files">GEANT4 Macro Files</a></li>
+    <li><a display:inline href="./GEANT4_MT_installation">GEANT4 Multithreaded Installation</a></li>
+    <li><a display:inline href="./GEANT4_MT_application">GEANT4 Multithreaded Application</a></li>
+    <li><a display:inline href="./GEANT4_user_defined_messages">GEANT4 User Defined Messages</a></li>
+    <li><a display:inline href="./GEANT4_detector_efficiencies">GEANT4 Detector Efficiencies</a></li>
+    <li><a display:inline href="./GEANT4_cherenkov_detector">GEANT4 Cherenkov Detector</a></li>
+    <li><a display:inline href="./GEANT4_ROOT_results">GEANT4 Output Stored in a ROOT File</a></li>
+    <li><a display:inline href="./ROOT">ROOT</a></li>
+    <li><a display:inline href="./contact">Contact</a></li>
+    <li><a display:inline href="./archive">Archive</a></li>
+    </ul>
+</nav>
+    <article>
+        <header>
+            <h1>GEANT4 Detector Efficiencies</h1>  
+        </header>
+        <br>
+        <p>
+        It's common knowledge that particle detectors are not 100% efficient when detecting particles. It is with this in mind that adding detector efficiencies brings our simulation one stpe closer to truly replicating nature. The following aims to detil how this functionality can be added to GEANT4 and our Cherenkov Detector, contruction so far. Note, this section will require a working simulation upto and lincluding the step of adding user defined messages. Source code for this simulation can be found via GitHub, accessed through the Contact page. 
+        </p>
+        <br>
+      	<p>
+      	There is not a standard built in function to enable efficiencies to be integrated into GEANT4, as such there's several different methods that can be used. In any example, a data set if required to model the efficiency of the detector in question. There's a sample data file describing an efficiency held within the source code here titled eff.dat. Be careful at this point to ensure your data file down not contain a blank line at the end. Next, using a similar method outlined previously for the macro files, we need to ensure our data file is copied from the source directory into the build directory. As such, we retun to our CMakeLists.txt file. The change made here will ensure that any .dat files created are copied to the build directory once the programme is compiled. 
+</html>
