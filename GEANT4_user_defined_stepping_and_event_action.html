@@ -38,15 +38,7 @@
         </p>
         <br>
         <p>
-        To begin, we need to make some changes to our physics list. As such, we return to our physics.cc and physics.hh files. Within the physics.cc file, we now need to register some additional physics lists, these are G4DecayPhysics and G4RadioactiveDecayPhysics. With these elements added, be sure to add the required header files to the physics.hh file. 
-        </p>
-        <br>
-        <p>
-        In the next step, we look to add a cobalt source to the primary generator within our detector so will return to our generator.cc and generator.hh files. Where previously we defined protons within the generator constructor we now replace the proton definition with chargedgeantino. For reference, this serves as a blank particle in Geant4 without any values. These values can be assigned later. Here we will also set the particle momentum to zero. This particle can be changed later through a macro file, this would allow for multiple different particle to be run through the same simulation. Next we need to take the radioactive decay of cobalt into account.
-        </p>
-        <br>
-        <p>
-        To achieve this, we move to our GeneratePrimaries function and create a G4ParticleDefinition. Once outlined, we can create an if condition, if the particle definition is a ChargedGeantino, we can create the remaining particle properties. Note, these particle properties include the number of protons, the total number of nucleons, energy and charge. The units for the charge and energy are eplus and keV respectively. We also need to create an ion table, which will pull the required physics from the previously defined values for protons, nucleons, etc. With these elements completed, we can set out particle definition, similar to how we did in the constructor, to take these new values. Before testing, it is worth noting, the headers for G4ChargedGeantino and G4IonTable will need to be included in the Generator.hh header file. At this point, you should be able to run and test your simulation. 
+        
         
         
        </article> 
