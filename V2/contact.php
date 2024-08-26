@@ -1,25 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <link rel="stylesheet" href="web_style_1.css">
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Contact</title>
-    </head>
-    
-<nav>
-    <h1>Navigation</h1>
-    <ul>
-    <li><a display:inline href="./index">Home</a></li>
-    <li><a display:inline href="./about">About</a></li>
-    <li><a display:inline href="./GEANT4">GEANT4</a></li>
-    <li><a display:inline href="./ROOT">ROOT</a></li>
-    <li><a display:inline href="./contact">Contact</a></li>
-    <li><a display:inline href="./archive">Archive</a></li>
-    </ul>
-</nav>
-    <article>
+<?php
+    include_once 'header.php'
+?>
+
+<article>
         <header>
             <h1>Contact Details</h1>
         </header>
@@ -56,4 +39,7 @@
         <li><a href="https://github.com/Charlie-BrownGT" target="_blank">GitHub</a></li>
         </ul>
     </article>
-</html>
+
+<?php
+    include_once 'footer.php'
+?> 
