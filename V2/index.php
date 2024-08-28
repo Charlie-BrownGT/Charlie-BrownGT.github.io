@@ -1,7 +1,7 @@
 <?php
     include_once 'header.php'
 ?>
-test
+
 <article>
         <header>
             <h1>Home</h1>  
