@@ -1,61 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <link rel="stylesheet" href="web_style_1.css">
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Home</title>
-    </head>
-<nav>
-    <h1>Navigation</h1>
-    <ul>
-        <li><a display:inline href="./index">Home</a></li>
-        <li><a display:inline href="./about">About</a></li>
-        <li><a display:inline href="./computer_projects.html">Computer Projects</a></li>
-        <li><a display:inline href="./electronic_projects.html">Electronic Projects</a></li>
-        <li><a display:inline href="./physics_projects.html">Physics Projects</a></li>    
-        <li><a display:inline href="./contact">Contact</a></li>
-    </ul>
-</nav>
-    <article>
-        <header>
-            <h1>Home</h1>  
-        </header>
-        <br>
-        <h2>Welcome</h2>
-        <br>
-        <p>
-            Hello and welcome, my name is Guy Carter-Richardson and currently live in York, North Yorkshire, UK. I am currently studying a PhD within the Nuclear Astrophysics Group at the University of York. I have recently left employment in the British Army where I served for six and half years as an Commissioned Officer in the Royal Signals. 
-        </p>
-        <br>
-        <p>
-            The ongoing PhD is focussed on understanding nuclear formation within stars, specifically CNO breakout reactions.
-        </p>
-        <br>
-        <p>
-            Thankyou for visiting, and please feel free to get in touch via any of the methods detailed in the Contact tab. 
-        </p>    
-        <br>
-        <h2>Content</h2>
-        <br>
-        <p>
-            On this website, you'll find a range of content that reflects my interests:
-        </p>
-        <br>
-        <ul>
-            <li><strong>Computer Projects:</strong> Mostly ROOT, GEANT4 and NPTool.</li>
-            <li><strong>Electronic Projects:</strong> Based around Arduinos, Raspberry Pis and breadboards.</li>
-            <li><strong>Physics Projects:</strong> Sometimes related to the ongoing PhD project.</li>
-        </ul>
-        <br>
-        <p>
-            Then, other elements also included: 
-        </p>
-        <br>
-        <ul>
-            <li><strong>About:</strong> A brief synopsis of my background.</li>
-            <li><strong>Contact:</strong> Means to get in touch.</li>
-        </ul>
-    </article>
-</html>
+---
+layout: home
+title: Home
+subtitle: 
+---
+
+<section class="home-content">
+  <h1>Welcome</h1>
+  <p>
+    Hello and welcome, my name is Guy Carter-Richardson and currently live in York, North Yorkshire, UK. 
+    I am currently studying a PhD within the Nuclear Astrophysics Group at the University of York. 
+    I have recently left employment in the British Army where I served for six and half years as an Officer in the Royal Signals. 
+  </p>
+
+  <p>
+    The ongoing PhD is focussed on understanding nuclear formation within stars, specifically CNO breakout reactions.
+  </p>
+
+  <p>
+    Thankyou for visiting, and please feel free to get in touch via any of the methods detailed in the <a href="/contact">Contact</a> page. 
+  </p>
+
+  <h1>Content</h1>
+  <p>
+    On this website, you'll find a range of content that reflects my interests: 
+  </p>
+  <ul>
+    <li><a href="/computerProjects">Computer Projects</a>: Mostly ROOT, GEANT4 and NPTool.</li>
+    <li><a href="/electronics">Electronical Projects</a>: Based around Arduinos, Raspberry Pis and breadboards.</li>
+    <li><a href="/physics">Physics Projects</a>: Sometimes related to the ongoing PhD project.</li>
+  </ul>
+
+  <p>
+    Then, other elements also included: 
+  </p>
+  <ul>
+    <li><a href="/about">About</a>: A bit of background.</li>
+
+  </ul>
+</section>
