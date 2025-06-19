@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Electronic Projects
+title: Electrical Projects
 subtitle: 
 cover-img: /assets/img/arduino.jpg
 author: Guy Carter-Richardson
