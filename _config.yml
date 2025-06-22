@@ -20,14 +20,15 @@ author: Guy Carter-Richardson
 ###############################################
 
 navbar-links:
-  Physics: "physics"
-  Electronics: "electricalProjects"
-  Computer Projects: "computerProjects"
-  About: "about"
+  #Physics: "physics"
+  #Electronics: "electricalProjects"
+  #Computer Projects: "computerProjects"
+  Bio: "bio"
   Contact: "contact"
-  Resources:
+  Conferences: "conferences"
+  #Resources:
     #- Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
+  #  - Learn markdown: "https://www.markdowntutorial.com/"
   #Author's home: "https://deanattali.com"
 
 ################

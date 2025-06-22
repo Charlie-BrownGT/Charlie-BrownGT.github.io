@@ -8,7 +8,7 @@ My name is Guy Carter-Richardson. I am interested in several topics including cy
 
 ### Initial Studies 
 
-I completed my initial University studies with an MPhys in Physics, at Swansea University, where my thesis was titled ‘String Theory, Holography and Confinement in Quantum Chromodynamics’. This project helped to develop an understanding of String Theory, the Holographic Principle, Quantum Chromodynamics and their application when modelling strongly interacting particles. Overall this project used several multidimensional mathematical models to produce scaling factors, reflecting the interactions between these aforementioned particles. The manner with which these interactions scaled was subsequently compared to experimental observation, with an aim of iterating closer to nature. 
+I completed my initial University studies with an MPhys in Physics, at Swansea University, where my thesis was titled ‘String Theory, Holography and Confinement in Quantum Chromodynamics’. This project helped to develop an understanding of String Theory, the Holographic Principle, Quantum Chromodynamics and their application when modelling strongly interacting particles. Overall this used several multidimensional mathematical models to produce scaling factors, reflecting the interactions between these aforementioned particles. The manner with which these interactions scaled was subsequently compared to experimental observation.
 
 ---
 
@@ -20,7 +20,7 @@ Having completed initial studies, I went on to attend the Royal Military Academy
 
 ### PhD
 
-In August 2024 I left the British Army and began a studying for a PhD within the Nuclear Astrophysics research group at the University of York. The project I'm working on seeks to understand hot CNO breakout reactions, specifically 18Ne(alpha,p)21Na, to aid in current understanding of nucleosynthesis. 
+In August 2024 I left the British Army and began a studying for a PhD within the Nuclear Astrophysics research group at the University of York. The project I'm working on seeks to understand hot Carbon Nitrogen Oxygen (CNO) breakout reactions, specifically 18Ne(alpha,p)21Na, to aid in current understanding of nucleosynthesis. 
 
 ---
 
