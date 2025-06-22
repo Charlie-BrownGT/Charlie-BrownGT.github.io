@@ -38,7 +38,7 @@ libgsl-dev qtwebengine5-dev nlohmann-json3-dev libmysqlclient-dev
 
 #### GEANT4
 ```C
-sudo apt install nbsp cmake cMake-curses-gui gcc g++ libexpat1-dev \
+sudo apt install cmake cmake-curses-gui gcc g++ libexpat1-dev \
 qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools libxmu-dev \
 libmotif-dev
 ```
