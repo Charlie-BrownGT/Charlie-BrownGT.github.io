@@ -40,7 +40,7 @@ libgsl-dev qtwebengine5-dev nlohmann-json3-dev libmysqlclient-dev
 ```C
 sudo apt install cmake cmake-curses-gui gcc g++ libexpat1-dev \
 qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools libxmu-dev \
-libmotif-dev
+libmotif-dev libxerces-c-dev
 ```
 
 ### ROOT
