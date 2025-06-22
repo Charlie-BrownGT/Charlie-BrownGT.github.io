@@ -3,8 +3,8 @@ layout: post
 title: Making an Arduino-based FM Transmitter and Receiver
 subtitle: A simple arduino project
 cover-img: 
-thumbnail-img: /assets/img/arduino.jpg
-share-img: /assets/img/arduino2.jpg
+thumbnail-img: /assets/img/electronics/arduino.jpg
+share-img: /assets/img/electronics/arduino2.jpg
 tags: [electronics, arduino]
 author: Guy Carter-Richardson
 ---

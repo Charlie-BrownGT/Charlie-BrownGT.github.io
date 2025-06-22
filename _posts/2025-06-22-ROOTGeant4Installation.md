@@ -3,8 +3,8 @@ layout: post
 title: ROOT and GEANT4 Installation Guide
 subtitle: 
 cover-img: 
-thumbnail-img: /assets/img/nptoolLogo.png
-share-img: /assets/img/nptoolLogo.png
+thumbnail-img: /assets/img/computers/geant4Logo.png
+share-img: /assets/img/computers/geant4Logo.png
 tags: [Computer, Software]
 author: Guy Carter-Richardson
 ---
