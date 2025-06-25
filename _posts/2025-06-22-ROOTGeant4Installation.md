@@ -88,4 +88,6 @@ make install
 ```
 Finally, the GEANT4 .sh file was also added to the Ubuntu .bashrc file. Lastly, the functionality of GEANT4 was tested by building and running one of the pre-installed examples. 
 
-With these steps completed, the used should be able to access and run both ROOT and GEANT4. 
+With these steps completed, the used should be able to access and run both ROOT and GEANT4.
+
+Note, if installing GEANT4 in Ubuntu 24, be sure to check 'Ubuntu on Xorg' at the Ubuntu login screen. 
