@@ -14,6 +14,8 @@ I completed my initial University studies with an MPhys in Physics, at Swansea U
 
 ### The Army 
 
+![armyPhoto](/assets/img/armyPhoto.jpg){: style="width: 300px;" .mx-auto .d-block }
+
 Having completed initial studies, I went on to attend the Royal Military Academy, Sandhurst, UK, in January 2018 where I completed the Regular Commissioning Course and qualified to become a Commissioned Officer in the British Army. Commissioning into the Royal Corps of Signals, I completed my phase two training before posting into a variety of Field and Training Units. Highlights of my time spent in the British Army include deploying on a variety of international exercises and working around the world. These have served to develop both soft and hard skillets and set the foundations for an interest in cyber security, hardware and software. 
 
 ---
