@@ -6,7 +6,7 @@ cover-img:
 thumbnail-img: /assets/img/electronics/arduino.jpg
 share-img: /assets/img/electronics/arduino2.jpg
 tags: [electronics, arduino]
-author: Guy Carter-Richardson
+author:
 ---
 
 Materials for this projects were found [here](https://randomnerdtutorials.com/rf-433mhz-transmitter-receiver-module-with-arduino/).
@@ -15,11 +15,11 @@ The components required for this project were:
 
 1. Two arduino chips, personally I used an Elegoo Mega 2560 and an Arduino Uno. 
 1. A 433MHz RF Transmitter and Receiver module set. This was sourced from [here](https://www.ebay.co.uk/itm/276489151766) for £4.36.
-1. Jumper wires used to connect components to the modules. 
+1. Breadboard jumper wires used to connect components to the modules. 
 
 The ArduinoIDE was used to handle the software requirement throughout this project. The RadioHead library was required for both the transmitter and receiver sketches so was added to the IDE library.
 
-The transmitter circuit was configured as follow: 
+The transmitter circuit was configured as follows: 
 
 ![Transmitter](/assets/img/electronics/433MhzTransmitterCircuit.jpg){: .mx-auto.d-block :}
 

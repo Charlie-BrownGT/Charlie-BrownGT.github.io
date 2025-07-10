@@ -6,7 +6,7 @@ cover-img:
 thumbnail-img: /assets/img/computers/geant4Logo.png
 share-img: /assets/img/computers/geant4Logo.png
 tags: [Computer, Software]
-author: Guy Carter-Richardson
+author: 
 ---
 
 ### Introduction
