@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Making an Arduino-based music box
+title: Making an Arduino based music box
 subtitle:
 cover-img: 
 thumbnail-img: /assets/img/electronics/arduino.jpg
