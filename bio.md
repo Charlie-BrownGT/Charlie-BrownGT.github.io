@@ -4,7 +4,7 @@ title: About
 subtitle: Introduction
 ---
 
-My name is Guy Carter-Richardson. I am interested in several topics including cyber security, experimenting with a variety of software and hardware platforms and understanding their application to several fields in Physics.
+Hello, I am interested in several topics including cyber security, experimenting with a variety of software and hardware platforms and understanding their application to several fields in Physics.
 
 ### Initial Studies 
 

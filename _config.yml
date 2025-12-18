@@ -55,21 +55,21 @@ round-avatar: true
 # You can change the order that they show up on the page by changing the order here.
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
-  email: "guy@thefridaypintclub.com"
+#  email: 
 #  rss: true  # remove this line if you don't want to show an RSS link at the bottom
-  facebook: Guy Carter-Richardson
+#  facebook: 
   github: Charlie-BrownGT
-  twitter: Guy Carter-Richardson
+#  twitter: 
 #  patreon: DeanAttali
 #  youtube: "@daattali"
 #  whatsapp: 15551212
 #  medium: yourname
 #  reddit: yourname or r/yoursubreddit
-  linkedin: Guy Carter-Richardson
+#  linkedin: 
 #  xing: yourname
 #  stackoverflow: "3943160/daattali"
 #  snapchat: deanat78
-  instagram: guycarterrichardson
+#  instagram:
 #  spotify: yourname
 #  telephone: +14159998888
 #  steam: deanat78
@@ -84,7 +84,7 @@ social-network-links:
 #  discord: "invite_code" or "users/userid" or "invite/invite_code"
 #  kaggle: yourname
 #  hackerrank: yourname
-  gitlab: GuyCarter-Richardson
+#  gitlab: 
 #  itchio: yourname
 #  untappd: yourname
 #  strava: youruserid
