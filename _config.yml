@@ -26,6 +26,7 @@ navbar-links:
   Bio: "bio"
   Contact: "contact"
   Conferences: "conferences"
+  Blog Posts: "blogPosts"
   #Resources:
     #- Beautiful Jekyll: "https://beautifuljekyll.com"
   #  - Learn markdown: "https://www.markdowntutorial.com/"
@@ -84,7 +85,7 @@ social-network-links:
 #  discord: "invite_code" or "users/userid" or "invite/invite_code"
 #  kaggle: yourname
 #  hackerrank: yourname
-#  gitlab: 
+  gitlab: GuyCarter-Richardson 
 #  itchio: yourname
 #  untappd: yourname
 #  strava: youruserid
