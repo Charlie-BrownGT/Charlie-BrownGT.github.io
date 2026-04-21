@@ -27,6 +27,8 @@ navbar-links:
   Contact: "contact"
   Conferences: "conferences"
   Blog Posts: "blogPosts"
+  Funding Applications: "fundingApplications"
+
   #Resources:
     #- Beautiful Jekyll: "https://beautifuljekyll.com"
   #  - Learn markdown: "https://www.markdowntutorial.com/"
